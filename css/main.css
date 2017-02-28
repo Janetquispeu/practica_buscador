@@ -1,0 +1,17 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.btn_tipo, .btn_tipo:hover{
+  width: 15%;
+  background-color: #BEC1C6;
+  border-color: transparent;
+  border-radius: 0px;
+  color: black;
+  margin: 1%;
+}
+.lista{
+  list-style: none;
+  display: none;
+}
