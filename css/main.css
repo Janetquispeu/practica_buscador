@@ -4,7 +4,7 @@
   margin: 0;
 }
 .btn_tipo, .btn_tipo:hover{
-  width: 15%;
+  width: 25%;
   background-color: #BEC1C6;
   border-color: transparent;
   border-radius: 0px;
@@ -14,4 +14,34 @@
 .lista{
   list-style: none;
   display: none;
+}
+.modal_content{
+  width: 67%;
+  text-align: center;
+}
+.modal_body{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.modal_footer{
+  border-top: none;
+  display: flex;
+  justify-content: center;
+}
+#myModal{
+  display: none;
+}
+.ruta{
+  border-radius: 15px;
+  border: 1px solid #BEC1C6;
+  background: #BEC1C6;
+  width: 55%;
+  padding: 3%;
+  display: none;
+  text-align: center;
+  margin-top: 5%;
+}
+section{
+  display: flex;
 }

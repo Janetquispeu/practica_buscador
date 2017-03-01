@@ -6,27 +6,58 @@
 	<title>Buscador</title>
 </head>
 <body>
-	<div class="container">
-	  <div class="dropdown">
-	    <button class="btn btn-primary dropdown-toggle btn_tipo" type="button" data-toggle="dropdown">Tipo
-	    <span class="caret"></span></button>
-	    <ul class="lista">
-	      <li><a href="#"><input type="checkbox" name="pregrado" class="checkbox_tipo"> Pregrado</a></li>
-	      <li><a href="#"><input type="checkbox" name="curso" class="checkbox_tipo"> Curso</a></li>
-	      <li><a href="#"><input type="checkbox" name="postgrado" class="checkbox_tipo"> Postgrado</a></li>
-	    </ul>
-	  </div>
-	  <div class="dropdown">
-	    <button class="btn btn-primary dropdown-toggle btn_tipo" type="button" data-toggle="dropdown">Modalidad
-	    <span class="caret"></span></button>
-	    <ul class="lista">
-	      <li><a href="#"><input type="checkbox" name="presencial" class="checkbox_tipo"> Presencial</a></li>
-	      <li><a href="#"><input type="checkbox" name="online" class="checkbox_tipo"> Online</a></li>
-	      <li><a href="#"><input type="checkbox" name="semi-presencial" class="checkbox_tipo">Semi-presencial</a></li>
-	    </ul>
-	  </div>
+	<div class="container-fluid">
+		<div class="col-md-4">
+			<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle btn_tipo" type="button" data-toggle="dropdown">Tipo
+		    <span class="caret"></span></button>
+		    <ul class="lista">
+		      <li><a href="#"><input type="checkbox" name="pregrado" class="check checkbox_tipo"> Pregrado</a></li>
+		      <li><a href="#"><input type="checkbox" name="curso" class="check checkbox_tipo"> Curso</a></li>
+		      <li><a href="#"><input type="checkbox" name="postgrado" class="check checkbox_tipo"> Postgrado</a></li>
+		    </ul>
+		  </div>
+		  <div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle btn_tipo" type="button" data-toggle="dropdown">Modalidad
+		    <span class="caret"></span></button>
+		    <ul class="lista">
+		      <li><a href="#"><input type="checkbox" name="presencial" class="check checkbox_modal"> Presencial</a></li>
+		      <li><a href="#"><input type="checkbox" name="online" class="check checkbox_modal"> Online</a></li>
+		      <li><a href="#"><input type="checkbox" name="semi-presencial" class="check checkbox_modal">Semi-presencial</a></li>
+		    </ul>
+		  </div>
+		  <div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle btn_tipo" type="button" data-toggle="dropdown">Precio
+		    <span class="caret"></span></button>
+		    <ul class="lista">
+		      <li><a href="#"><input type="checkbox" name="no-especificado" class="check checkbox_price"> No Especificado (3684)</a></li>
+		      <li><a href="#"><input type="checkbox" name="desde-0-hasta-99-soles" class="check checkbox_price"> S/. 0 - 99 (2)</a></li>
+		      <li><a href="#"><input type="checkbox" name="desde-100-hasta-999-soles" class="check checkbox_price">S/. 100 - 999 (68)</a></li>
+		      <li><a href="#"><input type="checkbox" name="desde-1000-hasta-1999-soles" class="check checkbox_price">S/. 1 000 - 1 999 (8)</a></li>
+		      <li><a href="#"><input type="checkbox" name="desde-2000-hasta-2999-soles" class="check checkbox_price">S/. 2 000 - 2 999 (2)</a></li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="col-md-8 container_mensaje">
+			<section>
+				<div id="myModal">
+			    <div class="modal-dialog">
+			      <div class="modal-content modal_content">
+			        <div class="modal-body modal_body">
+			          <p>Haz clic en buscar cuando hayas terminado de seleccionar tus filtros.</p>
+			        </div>
+			        <div class="modal-footer modal_footer">
+			        	<button type="button" class="btn btn-default btn_close">Close</button>
+			          <button type="button" class="btn btn-default btn_buscar">Buscar</button>
+			        </div>
+			      </div> 
+			    </div>
+			  </div>
+			</section>
+		  <div class="ruta"></div>
+		</div>
 	</div>
-	<div class="ruta"></div>
+
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/modal.js"></script>
