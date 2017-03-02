@@ -1,76 +1,79 @@
-$(document).ready(function(){
-	var modal_buscador=(function(){
-		var st={
+$(document).ready(function () {
+	var modal_search = (function () {
+		var st = {
 			checkbox     : ".check",
-			btnTipo			 : ".btn_tipo",
-			lista				 : ".lista",
+			btnType			 : ".btn_tipo",
+			list				 : ".lista",
 			ruta	       : ".ruta",
 			myModal			 : "#myModal",
 			btnClose		 : ".btn_close",
-			btnBuscar    : ".btn_buscar",
-			url          : "https://www.maseducacion.com"
+			btnSearch    : ".btn_buscar",
+			url          : "https://www.maseducacion.com",
 		}
 		var dom={}
 
-		var catchDom = function(){
-			dom.btnTipo      = $(st.btnTipo);
+		var catchDom = function () {
+			dom.btnType      = $(st.btnType);
 			dom.checkbox     = $(st.checkbox);
-			dom.lista        = $(st.lista);
+			dom.list         = $(st.list);
 			dom.ruta				 = $(st.ruta);
 			dom.myModal 	 	 = $(st.myModal);
 			dom.btnClose     = $(st.btnClose);
-			dom.btnBuscar    = $(st.btnBuscar);
+			dom.btnSearch    = $(st.btnSearch);
 		}
 
-		var afterCatchDom = function(){
-
+		var suscribeEvents = function () {
+			dom.btnType.on("click", events.list);
+			dom.checkbox.on("click", events.message);
+			dom.btnClose.on("click", events.close);
+			dom.btnSearch.on("click", events.name);
 		}
 
-		var suscribeEvents = function(){
-			dom.btnTipo.on("click", events.lista);
-			dom.checkbox.on("click", events.mensaje);
-			dom.btnClose.on("click", events.cerrar);
-			dom.btnBuscar.on("click", events.name);
-		}
 		var events = {
-			lista:function(){
-				var $this=$(this);
-				var elemento=$this.siblings(st.lista);
+			list : function () {
+				var $this    = $(this);
+				var elemento = $this.siblings(st.list);
 				elemento.toggle();
 			},
-			mensaje: function(){
+
+			message : function () {
 				dom.ruta.hide();
 				dom.myModal.show();	
 			},
-			cerrar:function(){
+
+			close : function () {
 				dom.myModal.hide();
 			},
-			name: function(){
-				var rutaTipo   = "";
+
+			name: function () {
+				var rutaType   = "";
 				var rutaModal  = "";
 				var rutaPrice  = "";
-				var valueTipo  = [];
+				var valueType  = [];
 				var valueModal = [];
 				var valuePrice = [];
 
 				$(".check").each(function(index, element){ 
 					var $this = $(element);
 					if($this.hasClass('checkbox_tipo')){
-						fn.isChecked($this, valueTipo)
+						fn.isChecked($this, valueType)
 					}
+
 					if($this.hasClass('checkbox_modal')){
 						fn.isChecked($this, valueModal)
 					}
+
 					if($this.hasClass('checkbox_price')){
 						fn.isChecked($this, valuePrice)
-					}					
+					}	
+
 				});	
 
-				rutaTipo  = valueTipo.join("--");
+				rutaType  = valueType.join("--");
 				rutaModal = valueModal.join("--");
 				rutaPrice = valuePrice.join("--");
 
-				var url = fn.getUrl(rutaTipo, rutaModal, rutaPrice);
+				var url = fn.getUrl(rutaType, rutaModal, rutaPrice);
 				dom.ruta.text(url);
 				fn.style();
 			}
@@ -81,11 +84,13 @@ $(document).ready(function(){
 				if($element.is(':checked')){
 			 		arr.push($element.attr("name"));
 		    }
+
 			},
-			getUrl: function(rutaTipo, rutaModal, rutaPrice){
+
+			getUrl: function(rutaType, rutaModal, rutaPrice){
 				var url = st.url;
-				if(rutaTipo !== ""){
-					url = url + '/' + rutaTipo;
+				if(rutaType !== ""){
+				  url = url + '/' + rutaType;
 				}
 				if(rutaModal !== ""){
 					url = url + '/' + rutaModal;
@@ -95,20 +100,23 @@ $(document).ready(function(){
 				}
 				return url;
 			},
-			style:function(){
+
+			style:function () {
 				dom.myModal.hide();
 			  $(st.ruta).css("display","block");
 			}
+
 		}
 		
-		var initialize=function(){
+		var initialize = function () {
 			catchDom();
-			afterCatchDom();
 			suscribeEvents();
 		}
+
 		return{
 			init:initialize
 		}
+
 	})();
-	modal_buscador.init(); 
+	modal_search.init(); 
 });

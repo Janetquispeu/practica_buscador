@@ -1,0 +1,25 @@
+{
+  "name": "ejembuscador",
+  "version": "1.0.0",
+  "description": "miproyecto",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-install": "file:node_modules/gulp-install",
+    "gulp-stylus": "^2.6.0",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janetquispeu/practica_buscador.git"
+  },
+  "author": "Janet Quispe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Janetquispeu/practica_buscador/issues"
+  },
+  "homepage": "https://github.com/Janetquispeu/practica_buscador#readme"
+}
